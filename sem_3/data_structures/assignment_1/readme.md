@@ -1,5 +1,7 @@
 ### Statement
 
+_**Date:** 20 Aug, 2024_
+
 Write a c code for the following:
 **Input:** a set of n numbers in an array A
 **Output:** If there exist a majority element, print it else print no majority element.
@@ -20,4 +22,4 @@ Upload the a) program (.c file) in classroom along with a b) documentation (.doc
 2. Algorithm as statements or Pseudocode or flowchart (not the program)
 3. A dry run of your algorithm
 
-> Note: Please do not copy from internet/ friend. You will be penalized if you copy.
+> **Note:** Please do not copy from internet/ friend. You will be penalized if you copy.
