@@ -13,8 +13,8 @@ range_of_points = input("Enter range of points: ")
 subprocess.run(["gcc", "-o", "data_generator", "data_generator.c", "-lm"])
 subprocess.run(["./data_generator"+bin_extension,
                number_of_points, range_of_points])
-subprocess.run(["gcc", "main.c", "-lm"])
-subprocess.run(["./a"+bin_extension])
+subprocess.run(["gcc", "-o", "main", "main.c", "-lm"])
+subprocess.run(["./main"+bin_extension])
 
 colors = {
     0: "red",
