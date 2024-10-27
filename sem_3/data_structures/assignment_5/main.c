@@ -15,7 +15,7 @@ typedef struct point
 
 int find_cluster_id(point p, point *clusters)
 {
-   float min_dist = 1000;
+   float min_dist = __INT_MAX__;
    int cluster_id = 0;
    for (int i = 0; i < k; i++)
    {
@@ -80,9 +80,10 @@ int main()
       return 1;
    }
    int n;
+   int range;
 
    // Input from the data.txt file
-   fscanf(fpr, "%d", &n);
+   fscanf(fpr, "%d %d", &n, &range);
    point *points = (point *)malloc(n * sizeof(point));
    point *clusters = (point *)malloc(k * sizeof(point));
 
@@ -95,8 +96,8 @@ int main()
    // Randomly generate k clusters
    for (int i = 0; i < k; i++)
    {
-      clusters[i].x = rand() % 100;
-      clusters[i].y = rand() % 100;
+      clusters[i].x = rand() % range;
+      clusters[i].y = rand() % range;
       clusters[i].cluster_id = i;
    }
 

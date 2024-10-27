@@ -3,16 +3,18 @@ import subprocess
 import os
 
 if os.name == "nt":
-    bin_extension = "exe"
+    bin_extension = ".exe"
 else:
-    bin_extension = "out"
+    bin_extension = ""
 
 number_of_points = input("Enter number of random points: ")
+range_of_points = input("Enter range of points: ")
 
 subprocess.run(["gcc", "-o", "data_generator", "data_generator.c", "-lm"])
-subprocess.run(["./data_generator."+bin_extension, number_of_points])
+subprocess.run(["./data_generator"+bin_extension,
+               number_of_points, range_of_points])
 subprocess.run(["gcc", "main.c", "-lm"])
-subprocess.run(["./a."+bin_extension])
+subprocess.run(["./a"+bin_extension])
 
 colors = {
     0: "red",
@@ -39,9 +41,6 @@ k = int(points[1])
 x = []
 y = []
 cluster_ids = []
-# TODO: Use points from the result.txt file to get cluster_ids
-# cluster_ids = [random.randint(0, k) for _ in range(n)]
-
 
 # Put the coordinates in lists
 for i in range(2, (3*n)+1, 3):
