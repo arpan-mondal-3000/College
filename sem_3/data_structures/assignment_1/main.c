@@ -8,7 +8,7 @@ int findMajorityElem(int a[], int n)
    for (int i = 0; i < n; i++)
       if (a[i] >= max)
          max = a[i];
-   // Using a new array as a hashmap using the original array elements as key(here index of array) and there number of occurrences as value
+   // Using a new array as a hashmap using the original array elements as key(here index of array) and their number of occurrences as value
    int *arr = (int *)calloc(max + 1, sizeof(int));
 
    // Calculating number of occurrences of each element and storing it as key value pairs in arr
