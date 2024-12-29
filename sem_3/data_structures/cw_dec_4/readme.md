@@ -6,6 +6,7 @@
 - Search(x)
 - DisplayBST(): by in order traversal
 - Delete (x)
+- Height(x) : find height of the node that has key x
 
 Take inputs randomly to insert in the BST.
 

@@ -43,6 +43,15 @@ int search(node *root, int key)
     }
 }
 
+int depth(node *root)
+{
+    if (!root)
+        return 0;
+    int lheight = depth(root->lchild);
+    int rheight = depth(root->rchild);
+    return lheight > rheight ? lheight + 1 : rheight + 1;
+}
+
 void insert(node *root, node *new_node)
 {
     if (root->data == new_node->data)
@@ -154,9 +163,9 @@ int main()
     scanf("%d", &n);
     node *root = createBSTNode(n);
     int choice = -1;
-    while (choice != 4)
+    while (choice != 5)
     {
-        printf("Enter 0 to insert a new node\n\t1 to search for a node with key\n\t2 to display the whole tree\n\t3 to delete a node with key\n\tand 4 to exit: ");
+        printf("Enter 0 to insert a new node\n\t1 to search for a node with key\n\t2 to display the whole tree\n\t3 to delete a node with key\n\t4 to find height of a node\n\tand 5 to exit: ");
         scanf("%d", &choice);
         switch (choice)
         {
@@ -189,6 +198,28 @@ int main()
             printf("Enter key to delete: ");
             scanf("%d", &n);
             delete (root, n);
+            break;
+        }
+        case 4:
+        {
+            int n;
+            printf("Enter key to find height: ");
+            scanf("%d", &n);
+            int total_depth = depth(root);
+            int node_depth = search(root, n);
+            printf("The height is: %d\n", total_depth - node_depth - 1);
+            break;
+        }
+        case 5:
+        {
+            printf("Exiting...\n");
+            break;
+        }
+        default:
+        {
+            printf("Enter a valid choice!\n");
+            choice = -1;
+            break;
         }
         }
     }
