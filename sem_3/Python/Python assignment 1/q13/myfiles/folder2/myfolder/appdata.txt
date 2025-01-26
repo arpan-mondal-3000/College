@@ -1,0 +1,2 @@
+Dummy appdata file
+for a dummy app
