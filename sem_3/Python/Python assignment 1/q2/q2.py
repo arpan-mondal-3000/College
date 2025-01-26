@@ -12,11 +12,12 @@ for word in contents.split():
 print(frequencies)
 
 
-def key_fn(i):
-    return frequencies[i]
+# def key_fn(i):
+#     return frequencies[i]
 
 
-sorted_freq = sorted(frequencies, key=key_fn, reverse=True)
+sorted_freq = sorted(frequencies, key=lambda x: frequencies[x], reverse=True)
+print(sorted_freq)
 
 sorted_dict = {}
 for key in sorted_freq:

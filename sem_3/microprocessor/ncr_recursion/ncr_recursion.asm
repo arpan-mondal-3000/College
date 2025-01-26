@@ -39,4 +39,4 @@ skip3: 	dcr b
 	pop b
 	ret
 
-data: db 0ah,02h
+data: db 0ah,05h

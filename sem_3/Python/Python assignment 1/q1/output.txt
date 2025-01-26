@@ -1,3 +1,6 @@
 This is a file
 It has some contents
 Use it as input file
+file has a name
+This is used for input file
+used as input

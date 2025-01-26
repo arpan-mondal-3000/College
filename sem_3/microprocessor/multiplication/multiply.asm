@@ -1,6 +1,6 @@
 ;<Multiplication by shift and add>
 
-START: lxi h, data
+lxi h, data
 mov e, m ; operand 1
 mvi d, 00h
 
@@ -52,4 +52,4 @@ inx d
 end: xchg
 hlt
 
-data: db 89h, 85h 
+data: db 89h, 04h 

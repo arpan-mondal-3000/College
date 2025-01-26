@@ -1,0 +1,7 @@
+This is a file
+It has some secret data
+It must be encrypted
+abc
+xyz
+ABC 
+XYZ
