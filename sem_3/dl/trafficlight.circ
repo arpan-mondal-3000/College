@@ -248,93 +248,99 @@ end TCL_Generic;&#13;
     <wire from="(1010,200)" to="(1020,200)"/>
     <wire from="(80,500)" to="(150,500)"/>
     <wire from="(560,270)" to="(570,270)"/>
-    <comp lib="5" loc="(360,660)" name="Hex Digit Display"/>
-    <comp lib="0" loc="(240,710)" name="Splitter">
-      <a name="fanout" val="5"/>
-      <a name="incoming" val="5"/>
-    </comp>
-    <comp lib="5" loc="(1020,380)" name="LED">
-      <a name="color" val="#00ff04"/>
-    </comp>
-    <comp lib="1" loc="(130,180)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="5" loc="(1020,240)" name="LED">
-      <a name="color" val="#00ff04"/>
-    </comp>
-    <comp lib="0" loc="(150,220)" name="Ground"/>
     <comp lib="0" loc="(280,650)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
-    </comp>
-    <comp lib="0" loc="(60,610)" name="Clock"/>
-    <comp lib="1" loc="(300,360)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="4" loc="(380,310)" name="D Flip-Flop"/>
-    <comp lib="1" loc="(80,170)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(720,220)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="4" loc="(150,130)" name="Shift Register">
-      <a name="parallel" val="false"/>
-    </comp>
-    <comp loc="(210,460)" name="delay"/>
-    <comp lib="0" loc="(360,660)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-    </comp>
-    <comp lib="5" loc="(1020,200)" name="LED">
-      <a name="color" val="#fbff00"/>
-    </comp>
-    <comp lib="5" loc="(1020,300)" name="LED">
-      <a name="color" val="#ff0000"/>
-    </comp>
-    <comp lib="5" loc="(1020,340)" name="LED">
-      <a name="color" val="#fbff00"/>
-    </comp>
-    <comp lib="5" loc="(410,660)" name="Hex Digit Display"/>
-    <comp lib="0" loc="(330,730)" name="Ground"/>
-    <comp lib="1" loc="(170,610)" name="NOT Gate">
-      <a name="facing" val="south"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="0" loc="(290,280)" name="Constant"/>
-    <comp lib="5" loc="(1020,160)" name="LED">
-      <a name="color" val="#ff0000"/>
     </comp>
     <comp lib="1" loc="(180,650)" name="AND Gate">
       <a name="facing" val="south"/>
       <a name="size" val="30"/>
       <a name="inputs" val="3"/>
     </comp>
+    <comp lib="1" loc="(840,260)" name="OR Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp loc="(980,260)" name="lights"/>
+    <comp loc="(210,460)" name="delay"/>
+    <comp lib="4" loc="(380,310)" name="D Flip-Flop"/>
+    <comp lib="1" loc="(170,610)" name="NOT Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(330,730)" name="Ground"/>
+    <comp lib="5" loc="(1020,340)" name="LED">
+      <a name="color" val="#fbff00"/>
+    </comp>
+    <comp lib="0" loc="(360,660)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="5" loc="(1020,160)" name="LED">
+      <a name="color" val="#ff0000"/>
+    </comp>
     <comp lib="1" loc="(500,330)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="2" loc="(340,350)" name="Multiplexer">
-      <a name="enable" val="false"/>
+    <comp lib="1" loc="(130,180)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(60,610)" name="Clock"/>
+    <comp lib="8" loc="(937,166)" name="Text">
+      <a name="text" val="Lights"/>
+    </comp>
+    <comp lib="0" loc="(150,220)" name="Ground"/>
+    <comp lib="5" loc="(410,660)" name="Hex Digit Display"/>
+    <comp lib="1" loc="(300,360)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="5" loc="(1020,380)" name="LED">
+      <a name="color" val="#00ff04"/>
+    </comp>
+    <comp lib="5" loc="(360,660)" name="Hex Digit Display"/>
+    <comp lib="0" loc="(240,710)" name="Splitter">
+      <a name="fanout" val="5"/>
+      <a name="incoming" val="5"/>
     </comp>
     <comp lib="2" loc="(340,290)" name="Multiplexer">
       <a name="enable" val="false"/>
     </comp>
-    <comp loc="(980,260)" name="lights"/>
-    <comp lib="1" loc="(840,260)" name="OR Gate">
-      <a name="inputs" val="4"/>
+    <comp lib="4" loc="(150,130)" name="Shift Register">
+      <a name="parallel" val="false"/>
+    </comp>
+    <comp lib="1" loc="(90,110)" name="NOT Gate">
+      <a name="facing" val="west"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="5" loc="(1020,300)" name="LED">
+      <a name="color" val="#ff0000"/>
     </comp>
     <comp lib="1" loc="(560,330)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="3"/>
     </comp>
+    <comp lib="8" loc="(182,447)" name="Text">
+      <a name="text" val="Delay"/>
+    </comp>
+    <comp lib="1" loc="(720,220)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="2" loc="(340,350)" name="Multiplexer">
+      <a name="enable" val="false"/>
+    </comp>
     <comp lib="1" loc="(560,270)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(90,110)" name="NOT Gate">
-      <a name="facing" val="west"/>
-      <a name="size" val="20"/>
+    <comp lib="5" loc="(1020,200)" name="LED">
+      <a name="color" val="#fbff00"/>
+    </comp>
+    <comp lib="1" loc="(80,170)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(290,280)" name="Constant"/>
+    <comp lib="5" loc="(1020,240)" name="LED">
+      <a name="color" val="#00ff04"/>
     </comp>
   </circuit>
   <circuit name="lights">
@@ -397,8 +403,8 @@ end TCL_Generic;&#13;
     <wire from="(600,210)" to="(620,210)"/>
     <wire from="(600,250)" to="(620,250)"/>
     <wire from="(490,450)" to="(520,450)"/>
-    <wire from="(770,150)" to="(800,150)"/>
     <wire from="(770,210)" to="(800,210)"/>
+    <wire from="(770,150)" to="(800,150)"/>
     <wire from="(770,230)" to="(800,230)"/>
     <wire from="(770,270)" to="(800,270)"/>
     <wire from="(770,310)" to="(800,310)"/>
@@ -406,10 +412,10 @@ end TCL_Generic;&#13;
     <wire from="(770,250)" to="(800,250)"/>
     <wire from="(770,170)" to="(800,170)"/>
     <wire from="(770,130)" to="(800,130)"/>
-    <wire from="(510,300)" to="(510,410)"/>
-    <wire from="(770,70)" to="(800,70)"/>
     <wire from="(770,90)" to="(800,90)"/>
     <wire from="(770,110)" to="(800,110)"/>
+    <wire from="(510,300)" to="(510,410)"/>
+    <wire from="(770,70)" to="(800,70)"/>
     <wire from="(540,280)" to="(570,280)"/>
     <wire from="(550,160)" to="(550,260)"/>
     <wire from="(550,120)" to="(640,120)"/>
@@ -450,29 +456,89 @@ end TCL_Generic;&#13;
     <wire from="(500,340)" to="(570,340)"/>
     <wire from="(520,450)" to="(530,450)"/>
     <wire from="(500,220)" to="(500,340)"/>
+    <comp lib="5" loc="(800,310)" name="LED">
+      <a name="color" val="#00ff04"/>
+    </comp>
+    <comp lib="0" loc="(800,250)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y5"/>
+    </comp>
+    <comp lib="0" loc="(800,210)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y4"/>
+    </comp>
     <comp lib="0" loc="(610,520)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="S1"/>
     </comp>
-    <comp lib="1" loc="(670,170)" name="AND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(600,330)" name="AND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(600,210)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="5" loc="(800,170)" name="LED">
-      <a name="color" val="#00ff04"/>
+    <comp lib="5" loc="(800,90)" name="LED">
+      <a name="color" val="#ff0000"/>
     </comp>
     <comp lib="0" loc="(800,290)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="Y6"/>
+    </comp>
+    <comp lib="1" loc="(670,130)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="4" loc="(290,360)" name="Counter">
+      <a name="width" val="3"/>
+      <a name="max" val="0x5"/>
+    </comp>
+    <comp lib="1" loc="(600,330)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="0" loc="(470,470)" name="Splitter">
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+    </comp>
+    <comp lib="5" loc="(800,270)" name="LED">
+      <a name="color" val="#fbff00"/>
+    </comp>
+    <comp lib="5" loc="(800,230)" name="LED">
+      <a name="color" val="#ff0000"/>
+    </comp>
+    <comp lib="1" loc="(670,230)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(600,290)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="1" loc="(530,410)" name="NOT Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(800,70)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y1"/>
+    </comp>
+    <comp lib="0" loc="(800,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y2"/>
+    </comp>
+    <comp lib="1" loc="(600,250)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="5" loc="(800,170)" name="LED">
+      <a name="color" val="#00ff04"/>
+    </comp>
+    <comp lib="1" loc="(670,90)" name="XOR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(250,440)" name="Pin">
+      <a name="label" val="clk"/>
+    </comp>
+    <comp lib="1" loc="(600,210)" name="AND Gate">
+      <a name="size" val="30"/>
     </comp>
     <comp lib="5" loc="(800,130)" name="LED">
       <a name="color" val="#fbff00"/>
@@ -481,88 +547,28 @@ end TCL_Generic;&#13;
       <a name="facing" val="north"/>
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(550,410)" name="NOT Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(600,250)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(610,540)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="S0"/>
-    </comp>
-    <comp lib="5" loc="(800,230)" name="LED">
-      <a name="color" val="#ff0000"/>
-    </comp>
-    <comp lib="1" loc="(670,130)" name="AND Gate">
+    <comp lib="1" loc="(670,170)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="0" loc="(800,210)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y4"/>
-    </comp>
-    <comp lib="0" loc="(610,500)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="S2"/>
-    </comp>
-    <comp lib="0" loc="(250,440)" name="Pin">
-      <a name="label" val="clk"/>
-    </comp>
-    <comp lib="1" loc="(670,90)" name="XOR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(530,410)" name="NOT Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="4" loc="(290,360)" name="Counter">
-      <a name="width" val="3"/>
-      <a name="max" val="0x5"/>
-    </comp>
-    <comp lib="0" loc="(470,470)" name="Splitter">
-      <a name="fanout" val="3"/>
-      <a name="incoming" val="3"/>
-    </comp>
-    <comp lib="1" loc="(670,230)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(800,110)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y2"/>
-    </comp>
-    <comp lib="0" loc="(800,70)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y1"/>
-    </comp>
-    <comp lib="5" loc="(800,270)" name="LED">
-      <a name="color" val="#fbff00"/>
     </comp>
     <comp lib="0" loc="(800,150)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="Y3"/>
     </comp>
-    <comp lib="5" loc="(800,310)" name="LED">
-      <a name="color" val="#00ff04"/>
-    </comp>
-    <comp lib="5" loc="(800,90)" name="LED">
-      <a name="color" val="#ff0000"/>
-    </comp>
-    <comp lib="0" loc="(800,250)" name="Pin">
+    <comp lib="0" loc="(610,540)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="Y5"/>
+      <a name="label" val="S0"/>
     </comp>
-    <comp lib="1" loc="(600,290)" name="AND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="3"/>
+    <comp lib="0" loc="(610,500)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="S2"/>
+    </comp>
+    <comp lib="1" loc="(550,410)" name="NOT Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="20"/>
     </comp>
   </circuit>
   <circuit name="delay">
@@ -700,38 +706,51 @@ end TCL_Generic;&#13;
     <wire from="(120,360)" to="(120,610)"/>
     <wire from="(580,170)" to="(590,170)"/>
     <wire from="(100,150)" to="(230,150)"/>
-    <comp lib="0" loc="(530,760)" name="Pin">
-      <a name="label" val="clk"/>
+    <comp lib="1" loc="(360,110)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="4" loc="(600,580)" name="Counter">
+      <a name="width" val="2"/>
+      <a name="max" val="0x2"/>
+      <a name="ongoal" val="stay"/>
+    </comp>
+    <comp lib="1" loc="(960,540)" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="0" loc="(780,630)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Two"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(270,110)" name="NAND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="0" loc="(1040,400)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Delay"/>
+    </comp>
+    <comp lib="4" loc="(600,340)" name="Counter">
+      <a name="width" val="3"/>
+      <a name="max" val="0x4"/>
+      <a name="ongoal" val="stay"/>
+    </comp>
+    <comp lib="1" loc="(350,600)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(100,50)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="S1"/>
     </comp>
     <comp lib="1" loc="(270,610)" name="NAND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="3"/>
     </comp>
-    <comp lib="4" loc="(590,90)" name="Counter">
-      <a name="width" val="5"/>
-      <a name="max" val="0x19"/>
-      <a name="ongoal" val="stay"/>
-    </comp>
     <comp lib="1" loc="(70,90)" name="NOT Gate">
-      <a name="facing" val="south"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(170,90)" name="NOT Gate">
-      <a name="facing" val="south"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(360,110)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(50,50)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="S2"/>
-    </comp>
-    <comp lib="0" loc="(780,450)" name="Splitter">
-      <a name="fanout" val="3"/>
-      <a name="incoming" val="3"/>
-    </comp>
-    <comp lib="1" loc="(120,90)" name="NOT Gate">
       <a name="facing" val="south"/>
       <a name="size" val="20"/>
     </comp>
@@ -739,23 +758,31 @@ end TCL_Generic;&#13;
       <a name="size" val="30"/>
       <a name="inputs" val="3"/>
     </comp>
-    <comp lib="1" loc="(270,110)" name="NAND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="4" loc="(600,340)" name="Counter">
-      <a name="width" val="3"/>
-      <a name="max" val="0x4"/>
-      <a name="ongoal" val="stay"/>
-    </comp>
-    <comp lib="4" loc="(600,580)" name="Counter">
-      <a name="width" val="2"/>
-      <a name="max" val="0x2"/>
-      <a name="ongoal" val="stay"/>
-    </comp>
     <comp lib="0" loc="(150,50)" name="Pin">
       <a name="facing" val="south"/>
       <a name="label" val="S0"/>
+    </comp>
+    <comp lib="1" loc="(960,430)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(780,390)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Four"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="4" loc="(590,90)" name="Counter">
+      <a name="width" val="5"/>
+      <a name="max" val="0x19"/>
+      <a name="ongoal" val="stay"/>
+    </comp>
+    <comp lib="1" loc="(170,90)" name="NOT Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(270,320)" name="NAND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
     </comp>
     <comp lib="0" loc="(1040,400)" name="Splitter">
       <a name="facing" val="west"/>
@@ -766,67 +793,46 @@ end TCL_Generic;&#13;
       <a name="bit3" val="1"/>
       <a name="bit4" val="0"/>
     </comp>
+    <comp lib="1" loc="(270,570)" name="NAND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="1" loc="(120,90)" name="NOT Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(780,690)" name="Splitter"/>
+    <comp lib="0" loc="(50,50)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="S2"/>
+    </comp>
+    <comp lib="0" loc="(780,450)" name="Splitter">
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+    </comp>
     <comp lib="0" loc="(780,140)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="Twenty_five"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(960,540)" name="OR Gate">
+    <comp lib="1" loc="(270,150)" name="NAND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="0" loc="(530,760)" name="Pin">
+      <a name="label" val="clk"/>
     </comp>
     <comp lib="1" loc="(360,360)" name="AND Gate">
       <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(100,50)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="S1"/>
-    </comp>
-    <comp lib="1" loc="(960,660)" name="OR Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="3"/>
     </comp>
     <comp lib="0" loc="(820,250)" name="Splitter">
       <a name="fanout" val="5"/>
       <a name="incoming" val="5"/>
     </comp>
-    <comp lib="1" loc="(960,430)" name="OR Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(780,630)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Two"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(1040,400)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Delay"/>
-    </comp>
-    <comp lib="0" loc="(780,690)" name="Splitter"/>
-    <comp lib="1" loc="(270,150)" name="NAND Gate">
+    <comp lib="1" loc="(960,660)" name="OR Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(270,320)" name="NAND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(270,570)" name="NAND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(350,600)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="0" loc="(780,390)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Four"/>
-      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
 </project>
