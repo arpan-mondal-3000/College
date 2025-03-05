@@ -1,0 +1,4 @@
+1. Set a primary key.
+2. Read data from file in chunks instead of loading the whole file.
+3. Check for duplicates while inserting students.
+4. When inserting marks if already present update the previous.
