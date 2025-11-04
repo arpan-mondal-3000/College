@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRC implementation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="main">
+        <div class="box">
+            <h1>CRC error detection simulation</h1>
+            <div class="input-form">
+                <input type="number" name="dataword" id="dataword" placeholder="Enter dataword" required />
+                <button class="button-29" onclick="handleDatawordSubmit()">Send</button>
+                <label id="view-codeword"></label>
+            </div>
+            <div class="output">
+                <button class="button-75" onclick="handleErrorDetection()">Detect</button>
+                <label for="output" id="output"></label>
+            </div>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+
+</html>
