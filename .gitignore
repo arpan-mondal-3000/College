@@ -4,3 +4,4 @@
 **/.vscode
 **/*.asm~
 **/large.txt
+**/bin
