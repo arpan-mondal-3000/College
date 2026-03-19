@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    .show {
+        display: flex;
+        gap: 1rem;
+        margin: 50px;
+    }
+
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border: 2px solid black;
+        border-radius: 16px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: antiquewhite;
+    }
+</style>
+
+<body>
+    <label for="input">Enter a number from 1 to 9</label>
+    <input type="number" name="input" id="inp" />
+    <div class="show"></div>
+</body>
+<script>
+    let numInp = document.getElementById("inp");
+    let container = document.getElementsByClassName("show")[0];
+    let numToPrint = 0;
+    let divArr = [];
+    let loop = setInterval(() => {
+        let previousNum = numToPrint;
+        if (/^[1-9]$/.test(numInp.value)) {
+            if (Number(numInp.value) > numToPrint) {
+                numToPrint++;
+                if (numToPrint !== previousNum) {
+                    console.log(numToPrint);
+                    const numDiv = document.createElement("div");
+                    numDiv.className = "box";
+                    numDiv.innerText = `${numToPrint}`;
+                    divArr.push(numDiv);
+                    container.appendChild(numDiv);
+                }
+            } else if (Number(numInp.value) < numToPrint) {
+                numToPrint--;
+                console.log(numToPrint);
+                let deletedElement = divArr.pop();
+                container.removeChild(deletedElement);
+            }
+        } else if (numInp.value === "" && numToPrint > 0) {
+            numToPrint--;
+            console.log(numToPrint);
+            let deletedElement = divArr.pop();
+            container.removeChild(deletedElement);
+        }
+    }, 1000) 
+</script>
+
+</html>

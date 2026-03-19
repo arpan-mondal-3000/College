@@ -6,14 +6,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class MyFrame extends JFrame implements ActionListener {
 
 	MyCanvas canvas = new MyCanvas();
-	JButton lineBtn=new JButton("Line"), circleBtn=new JButton("Circle");
+	JButton lineBtn = new JButton("Line"), circleBtn = new JButton("Circle"), hermiteSplineBtn = new JButton("Hermite spline");
+
 	public MyFrame() {
 		setExtendedState(MAXIMIZED_BOTH);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -21,15 +21,17 @@ public class MyFrame extends JFrame implements ActionListener {
 		Timer timer = new Timer(100, this);
 		timer.start();
 	}
-	
+
 	private void initComponents() {
 		JPanel topPanel = new JPanel();
 		lineBtn.addActionListener(this);
 		topPanel.add(lineBtn);
 		circleBtn.addActionListener(this);
 		topPanel.add(circleBtn);
-		add(topPanel,BorderLayout.NORTH);	
-		add(canvas);	
+		hermiteSplineBtn.addActionListener(this);
+		topPanel.add(hermiteSplineBtn);
+		add(topPanel, BorderLayout.NORTH);
+		add(canvas);
 	}
 
 	@Override
@@ -37,7 +39,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		super.paintComponents(g);
 		canvas.repaint();
 	}
-	
+
 	public static void main(String[] args) {
 		MyFrame f = new MyFrame();
 		f.setVisible(true);
@@ -45,21 +47,29 @@ public class MyFrame extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() instanceof Timer) {
+		if (e.getSource() instanceof Timer) {
 			canvas.repaint();
-		}else {
+		} else {
 			String cmd = e.getActionCommand();
-			if(cmd.equalsIgnoreCase("line")) {
+			if (cmd.equalsIgnoreCase("line")) {
+				canvas.currentDrawingTool = "line";
 				lineBtn.setBackground(Color.RED);
-				circleBtn.setBackground(new Color(238,238,238));
-			}else if(cmd.equalsIgnoreCase("circle")){
+				circleBtn.setBackground(new Color(238, 238, 238));
+				hermiteSplineBtn.setBackground(new Color(238, 238, 238));
+			} else if (cmd.equalsIgnoreCase("circle")) {
+				canvas.currentDrawingTool = "circle";
 				circleBtn.setBackground(Color.RED);
-				lineBtn.setBackground(new Color(238,238,238));
+				lineBtn.setBackground(new Color(238, 238, 238));
+				hermiteSplineBtn.setBackground(new Color(238, 238, 238));
+			} else if(cmd.equalsIgnoreCase("hermite spline")) {
+				canvas.currentDrawingTool = "hermite spline";
+				hermiteSplineBtn.setBackground(Color.RED);
+				lineBtn.setBackground(new Color(238, 238, 238));
+				circleBtn.setBackground(new Color(238, 238, 238));
 			}
-			
+
 		}
 
-		
 	}
 
 }

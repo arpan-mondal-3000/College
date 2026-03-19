@@ -10,11 +10,24 @@ public class Circle extends DrawingObject {
 		this.r = r;
 	}
 
+	@Override
+	public String toString() {
+		return "Circle[("+x+", "+y+")"+", "+r+"]";
+	}
 
 	@Override
 	void draw(Graphics g) {
-		g.drawOval(x, y, (int)r, (int)r);
-
+		float t = 0;
+		while(t < 2*Math.PI) {
+			double xPixel = r * Math.cos(t);
+			double yPixel = r * Math.sin(t);
+			
+			int translatedX = x + (int)Math.round(xPixel);
+			int translatedY = y + (int)Math.round(yPixel);
+			
+			g.drawRect(translatedX, translatedY, 1, 1);
+			t += 0.002;
+		}
 	}
 
 }
