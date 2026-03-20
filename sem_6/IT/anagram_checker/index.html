@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anagram Checker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s ease;
+            background: #f8fafc;
+        }
+
+        input[type="file"]:focus,
+        input[type="text"]:focus {
+            border-color: #6366f1;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            background: #4f46e5;
+            color: white;
+            padding: 13px 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        button:hover {
+            background: #4338ca;
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .results-wrapper {
+            margin-top: 24px;
+        }
+
+        .results-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        #result {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .result-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid #4f46e5;
+            padding: 12px 14px;
+            border-radius: 10px;
+            color: #0f172a;
+            font-size: 15px;
+        }
+
+        .error {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+            padding: 12px 14px;
+            border-radius: 10px;
+        }
+
+        .empty {
+            background: #fff7ed;
+            color: #c2410c;
+            border: 1px solid #fed7aa;
+            padding: 12px 14px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Anagram Checker</h1>
+        <p class="subtitle">Upload a dictionary file and find all matching anagrams for your word.</p>
+
+        <div class="form-group">
+            <label for="fileInput">Dictionary file</label>
+            <input type="file" name="file" id="fileInput" />
+        </div>
+
+        <div class="form-group">
+            <label for="inp">Word to check</label>
+            <input id="inp" type="text" placeholder="Enter a word to check" />
+        </div>
+
+        <button onclick="checkAnagram()">Check Anagrams</button>
+
+        <div class="results-wrapper">
+            <div class="results-title">Results</div>
+            <div id="result"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const inp = document.getElementById("inp");
+    const output = document.getElementById("result");
+
+    async function checkAnagram() {
+        output.innerHTML = "";
+
+        const file = document.getElementById("fileInput").files[0];
+        if (!file) {
+            output.innerHTML = '<div class="error">Please input a file first.</div>';
+            return;
+        }
+
+        const textInp = inp.value.trim();
+        if (!textInp) {
+            output.innerHTML = '<div class="error">Please enter a word to check.</div>';
+            return;
+        }
+
+        const sortedInp = textInp.split("").sort().join("");
+
+        const stream = file.stream().pipeThrough(new TextDecoderStream());
+        const reader = stream.getReader();
+
+        let leftOver = "";
+        let found = false;
+
+        console.log("Starting to process");
+
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+
+            let text = leftOver + value;
+            let words = text.split("\n");
+            leftOver = words.pop();
+
+            for (const word of words) {
+                const cleanWord = word.trim();
+                if (!cleanWord) continue;
+                if (cleanWord.length !== textInp.length) continue;
+
+                const sortedWord = cleanWord.split("").sort().join("");
+
+                if (sortedInp === sortedWord) {
+                    const newAnagram = document.createElement("div");
+                    newAnagram.className = "result-item";
+                    newAnagram.innerText = cleanWord;
+                    output.appendChild(newAnagram);
+                    found = true;
+                    console.log("Anagram found:", cleanWord);
+                }
+            }
+        }
+
+        if (leftOver.trim()) {
+            const cleanWord = leftOver.trim();
+            if (cleanWord.length === textInp.length) {
+                const sortedWord = cleanWord.split("").sort().join("");
+                if (sortedInp === sortedWord) {
+                    const newAnagram = document.createElement("div");
+                    newAnagram.className = "result-item";
+                    newAnagram.innerText = cleanWord;
+                    output.appendChild(newAnagram);
+                    found = true;
+                    console.log("Anagram found:", cleanWord);
+                }
+            }
+        }
+
+        if (!found) {
+            output.innerHTML = '<div class="empty">No anagrams found.</div>';
+        }
+
+        console.log("Processing done");
+        inp.value = "";
+    }
+</script>
+
+</html>
